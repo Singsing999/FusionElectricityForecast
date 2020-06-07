@@ -71,7 +71,6 @@ def evaluate_forecasts(actual, predicted):
   scores_mse = list()
   scores_rmse = list()
   scores_mae = list()
-  scores_r2 = list()
   # calculate an RMSE score for each day
   for i in range(predicted.shape[1]): 
       # calculate mse
