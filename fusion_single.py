@@ -284,10 +284,7 @@ def prepareTrainTestData(data, foldSize):
   
   return train
 
-if os.name == 'nt':
-  dataset_2 = read_csv(r'C:\Users\serka\OneDrive - metu.edu.tr\PHD\fusion\models\COMED_hourly.csv', header=0, usecols=[0,1], infer_datetime_format=True, parse_dates=['Datetime'], index_col=['Datetime'])
-else:
-  dataset_2 = read_csv(r'COMED_hourly.csv', header=0, usecols=[0,1], infer_datetime_format=True, parse_dates=['Datetime'], index_col=['Datetime'])
+dataset_2 = read_csv(r'COMED_hourly.csv', header=0, usecols=[0,1], infer_datetime_format=True, parse_dates=['Datetime'], index_col=['Datetime'])
 
 
 dataset_2 = dataset_2.astype('float32')

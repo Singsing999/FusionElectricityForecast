@@ -474,15 +474,9 @@ def prepareTrainTestData(data, foldSize):
   return train
 
 
-# load the new file
-#dataset = read_csv('complete_data.csv', header=0, usecols=[5,6,7,8,9,10,11,12], decimal=",", delimiter=";", infer_datetime_format=True, dayfirst=True, parse_dates=['Date'], index_col=['Date'])
 
-if os.name == 'nt':
-  dataset_1 = read_csv(r'C:\Users\serka\OneDrive - metu.edu.tr\PHD\fusion\models\ninja_weather_country_US_IL_merra_2_population_weighted.csv', header=0, usecols=[0,1,2,3,4,5,6,7,8], infer_datetime_format=True, parse_dates=['time'], index_col=['time'])
-  dataset_2 = read_csv(r'C:\Users\serka\OneDrive - metu.edu.tr\PHD\fusion\models\COMED_hourly.csv', header=0, usecols=[0,1], infer_datetime_format=True, parse_dates=['Datetime'], index_col=['Datetime'])
-else:
-  dataset_1 = read_csv(r'ninja_weather_country_US_IL_merra_2_population_weighted.csv', header=0, usecols=[0,1,2,3,4,5,6,7,8], infer_datetime_format=True, parse_dates=['time'], index_col=['time'])
-  dataset_2 = read_csv(r'COMED_hourly.csv', header=0, usecols=[0,1], infer_datetime_format=True, parse_dates=['Datetime'], index_col=['Datetime'])
+dataset_1 = read_csv(r'ninja_weather_country_US_IL_merra_2_population_weighted.csv', header=0, usecols=[0,1,2,3,4,5,6,7,8], infer_datetime_format=True, parse_dates=['time'], index_col=['time'])
+dataset_2 = read_csv(r'COMED_hourly.csv', header=0, usecols=[0,1], infer_datetime_format=True, parse_dates=['Datetime'], index_col=['Datetime'])
 
 dataset_2 = dataset_2.astype('float32')
 end_date = '12/31/2016 23:00'
